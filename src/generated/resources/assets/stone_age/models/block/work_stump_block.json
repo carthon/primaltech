@@ -1,0 +1,9 @@
+{
+  "parent": "stone_age:block/work_stump_block_template",
+  "textures": {
+    "particle": "minecraft:block/oak_log",
+    "0": "minecraft:block/oak_log",
+    "1": "minecraft:block/oak_log_top",
+    "2": "stone_age:block/work_stump_top"
+  }
+}

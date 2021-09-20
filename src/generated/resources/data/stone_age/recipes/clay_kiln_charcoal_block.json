@@ -1,0 +1,10 @@
+{
+  "type": "stone_age:clay_kiln",
+  "ingredient": {
+    "tag": "minecraft:logs"
+  },
+  "result": {
+    "item": "stone_age:charcoal_block",
+    "cookTime": 20.0
+  }
+}

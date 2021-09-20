@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " a ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:logs"
+    },
+    "a": {
+      "item": "stone_age:tree_stump_block"
+    }
+  },
+  "result": {
+    "item": "stone_age:work_stump_block"
+  }
+}

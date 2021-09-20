@@ -1,0 +1,7 @@
+{
+  "parent": "stone_age:block/rock_tiny_block",
+  "textures": {
+    "particle": "minecraft:block/stone",
+    "0": "minecraft:block/stone"
+  }
+}

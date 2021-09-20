@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "stone_age:block/charcoal_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "stone_age:block/charcoal_block"
+    },
+    "axis=z": {
+      "model": "stone_age:block/charcoal_block",
+      "x": 90
+    }
+  }
+}

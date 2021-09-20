@@ -1,0 +1,10 @@
+{
+  "type": "stone_age:wood_cutting",
+  "base": {
+    "tag": "minecraft:planks"
+  },
+  "result": {
+    "item": "minecraft:stick",
+    "count": 3
+  }
+}

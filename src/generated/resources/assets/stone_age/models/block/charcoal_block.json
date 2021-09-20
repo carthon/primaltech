@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "stone_age:block/charcoal_block",
+    "end": "stone_age:block/charcoal_block_top"
+  }
+}

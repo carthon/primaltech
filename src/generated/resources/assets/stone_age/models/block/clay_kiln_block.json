@@ -1,0 +1,7 @@
+{
+  "parent": "stone_age:block/clay_kiln",
+  "textures": {
+    "0": "minecraft:block/clay",
+    "particle": "minecraft:block/clay"
+  }
+}

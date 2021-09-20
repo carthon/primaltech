@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "stone_age:block/tree_stump_block"
+    },
+    "type=bottom": {
+      "model": "stone_age:block/tree_stump_block"
+    },
+    "type=double": {
+      "model": "stone_age:block/tree_stump_block"
+    }
+  }
+}

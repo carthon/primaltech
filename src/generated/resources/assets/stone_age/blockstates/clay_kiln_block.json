@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=north,fired=false": {
+      "model": "stone_age:block/clay_kiln_block",
+      "y": 180
+    },
+    "facing=south,fired=false": {
+      "model": "stone_age:block/clay_kiln_block"
+    },
+    "facing=west,fired=false": {
+      "model": "stone_age:block/clay_kiln_block",
+      "y": 90
+    },
+    "facing=east,fired=false": {
+      "model": "stone_age:block/clay_kiln_block",
+      "y": 270
+    },
+    "facing=north,fired=true": {
+      "model": "stone_age:block/clay_fired_kiln_block",
+      "y": 180
+    },
+    "facing=south,fired=true": {
+      "model": "stone_age:block/clay_fired_kiln_block"
+    },
+    "facing=west,fired=true": {
+      "model": "stone_age:block/clay_fired_kiln_block",
+      "y": 90
+    },
+    "facing=east,fired=true": {
+      "model": "stone_age:block/clay_fired_kiln_block",
+      "y": 270
+    }
+  }
+}

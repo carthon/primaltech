@@ -1,0 +1,10 @@
+{
+  "type": "stone_age:clay_kiln",
+  "ingredient": {
+    "item": "minecraft:clay_ball"
+  },
+  "result": {
+    "item": "minecraft:brick",
+    "cookTime": 10.0
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,variation=tiny": {
+      "model": "stone_age:block/rock_tiny_model",
+      "y": 180
+    },
+    "facing=south,variation=tiny": {
+      "model": "stone_age:block/rock_tiny_model"
+    },
+    "facing=west,variation=tiny": {
+      "model": "stone_age:block/rock_tiny_model",
+      "y": 90
+    },
+    "facing=east,variation=tiny": {
+      "model": "stone_age:block/rock_tiny_model",
+      "y": 270
+    },
+    "facing=north,variation=small": {
+      "model": "stone_age:block/rock_small_model",
+      "y": 180
+    },
+    "facing=south,variation=small": {
+      "model": "stone_age:block/rock_small_model"
+    },
+    "facing=west,variation=small": {
+      "model": "stone_age:block/rock_small_model",
+      "y": 90
+    },
+    "facing=east,variation=small": {
+      "model": "stone_age:block/rock_small_model",
+      "y": 270
+    },
+    "facing=north,variation=medium": {
+      "model": "stone_age:block/rock_medium_model",
+      "y": 180
+    },
+    "facing=south,variation=medium": {
+      "model": "stone_age:block/rock_medium_model"
+    },
+    "facing=west,variation=medium": {
+      "model": "stone_age:block/rock_medium_model",
+      "y": 90
+    },
+    "facing=east,variation=medium": {
+      "model": "stone_age:block/rock_medium_model",
+      "y": 270
+    },
+    "facing=north,variation=large": {
+      "model": "stone_age:block/rock_large_model",
+      "y": 180
+    },
+    "facing=south,variation=large": {
+      "model": "stone_age:block/rock_large_model"
+    },
+    "facing=west,variation=large": {
+      "model": "stone_age:block/rock_large_model",
+      "y": 90
+    },
+    "facing=east,variation=large": {
+      "model": "stone_age:block/rock_large_model",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "stone_age:block/work_stump_block",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "stone_age:block/work_stump_block"
+    },
+    "facing=west": {
+      "model": "stone_age:block/work_stump_block",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "stone_age:block/work_stump_block",
+      "y": 270
+    }
+  }
+}

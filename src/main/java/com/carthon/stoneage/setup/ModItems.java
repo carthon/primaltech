@@ -10,7 +10,7 @@ public class ModItems {
             new ShapedRock(new Item.Properties().durability(64).tab(ModItemGroups.MOD_ITEM_GROUPS)));
 
     public static final RegistryObject<Item> FIRE_STICK = Registration.ITEMS.register("fire_stick", () ->
-            new ItemFireStick(new Item.Properties().stacksTo(1).tab(ModItemGroups.MOD_ITEM_GROUPS)));
+            new ItemFireStick(new Item.Properties().stacksTo(1).durability(1).tab(ModItemGroups.MOD_ITEM_GROUPS)));
 
     static void register(){}
 }

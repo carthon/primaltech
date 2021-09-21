@@ -81,13 +81,6 @@ public class BlockTreeStump extends BlockBase {
     }
 
     @Override
-    public void playerDestroy(World worldIn, PlayerEntity player, BlockPos pos, BlockState state, @Nullable TileEntity te, ItemStack stack) {
-        TreeStumpTileEntity tile = (TreeStumpTileEntity) worldIn.getBlockEntity(pos);
-        if(tile != null && tile.getItem(0) == null)
-            super.playerDestroy(worldIn, player, pos, state, te, stack);
-    }
-
-    @Override
     protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(TYPE);
@@ -106,10 +99,10 @@ public class BlockTreeStump extends BlockBase {
 
     @Override
     public void attack(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) {
-        if(worldIn.isClientSide()){
+        if(!worldIn.isClientSide()){
             TreeStumpTileEntity tileEntity = (TreeStumpTileEntity) worldIn.getBlockEntity(pos);
             assert tileEntity != null;
-            if(tileEntity.getDamage() <= 0){
+            if(tileEntity.getItems().isEmpty() && tileEntity.getDamage() <= 0){
                 worldIn.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 worldIn.destroyBlock(pos, true, player);
             }

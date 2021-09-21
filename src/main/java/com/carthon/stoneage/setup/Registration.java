@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,6 +24,7 @@ public class Registration {
         ITEMS.register(modEventBus);
         TILE_ENTITY_TYPE.register(modEventBus);
         RECIPE_SERIALIZER_TYPE.register(modEventBus);
+        MinecraftForge.EVENT_BUS.register(new EventHandler());
 
         ModItems.register();
         ModBlocks.register();

@@ -93,7 +93,7 @@ public class BlockWorkStump extends BlockBase {
 
     @Override
     public void playerWillDestroy(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (world.isClientSide() && !player.isCreative()) {
+        if (!world.isClientSide() && !player.isCreative()) {
             WorkStumpTileEntity tile = (WorkStumpTileEntity) world.getBlockEntity(pos);
             if (tile != null) {
                 InventoryHelper.dropContents(world, pos, tile);

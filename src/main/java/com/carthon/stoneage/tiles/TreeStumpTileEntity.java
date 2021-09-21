@@ -16,6 +16,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.ToolType;
@@ -49,19 +50,22 @@ public class TreeStumpTileEntity extends InventoryHelperTileEntity implements IS
     }
 
     public void onBlockLeftClicked(@Nonnull PlayerEntity player){
-        World world = getLevel();
+//        chop(player, getLevel(), getBlockPos());
+    }
+
+    public void chop(@Nonnull PlayerEntity player, World world, BlockPos blockPos){
         assert world != null;
         if(player.getMainHandItem().getToolTypes().contains(ToolType.AXE) && !getInput().isEmpty()){
             if(chopsLeft > 0){
                 setChops(chopsLeft - 1);
                 player.causeFoodExhaustion(0.5F);
-                world.playSound(null, getBlockPos(), SoundEvents.WOOD_HIT, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                world.playSound(null, blockPos, SoundEvents.WOOD_HIT, SoundCategory.BLOCKS, 1.0f, 1.0f);
             } else if(recipeResult != ItemStack.EMPTY){
                 NonNullList<ItemStack> itemStacks = NonNullList.create();
                 itemStacks.add(0, ItemStack.EMPTY);
                 itemStacks.set(0, recipeResult);
                 itemStacks.get(0).setCount(4);
-                InventoryHelper.dropContents(world, getBlockPos(), itemStacks);
+                InventoryHelper.dropContents(world, blockPos, itemStacks);
                 recipeResult = ItemStack.EMPTY;
                 getInput().setStackInSlot(0, ItemStack.EMPTY);
                 if(StoneAgeConfig.TOOL_DAMAGE) {
@@ -69,7 +73,7 @@ public class TreeStumpTileEntity extends InventoryHelperTileEntity implements IS
                             playerEntity -> playerEntity.broadcastBreakEvent(EquipmentSlotType.MAINHAND));
                 }
                 setDamage(getDamage() - 1);
-                world.playSound(null, getBlockPos(), SoundEvents.WOOD_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                world.playSound(null, blockPos, SoundEvents.WOOD_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
             } else{
                 return;
             }
@@ -98,10 +102,11 @@ public class TreeStumpTileEntity extends InventoryHelperTileEntity implements IS
             }
         } else {
             if(recipe == null && !player.getOffhandItem().isEmpty()){
-                itemStack = player.getMainHandItem();
+                itemStack = player.getOffhandItem();
                 recipe = getRecipe(itemStack);
             }
-            if(getInput().getStackInSlot(0).isEmpty()){
+            if(getInput().getStackInSlot(0).isEmpty() && (recipe != null
+            || itemStack.getToolTypes().contains(ToolType.AXE))){
                 getInput().setStackInSlot(0, itemStack.split(1));
                 if(recipe != null){
                     totalChops = recipe.getChopTimes();

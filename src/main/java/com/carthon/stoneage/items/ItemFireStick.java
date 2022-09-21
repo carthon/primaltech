@@ -44,7 +44,6 @@ public class ItemFireStick extends Item {
             if (!mainHandItem.isEmpty() && !offHandItem.isEmpty()) {
                 if (mainHandItem.getItem() == ModItems.FIRE_STICK.get() && offHandItem.getItem() == ModItems.FIRE_STICK.get()) {
                     int count = mainHandItem.getTag().getInt("rubbingCount");
-                    StoneAge.LOGGER.debug("Doing Action and rubbingCount: " + count);
                     if (mainHandItem.getTag().getBoolean("animate")) {
                         mainHandItem.getTag().putInt("rubbingCount", count + 1);
 

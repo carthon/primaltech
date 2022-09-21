@@ -4,6 +4,7 @@ import com.carthon.stoneage.StoneAge;
 import com.carthon.stoneage.data.DataPackGeneration;
 import com.carthon.stoneage.tiles.TreeStumpTileEntity;
 import net.minecraft.item.Items;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -30,12 +31,13 @@ public class EventHandler {
     }
     @SubscribeEvent
     public void onPlayerBreakBlock(PlayerInteractEvent.LeftClickBlock event){
-        TreeStumpTileEntity tileEntity = (TreeStumpTileEntity) event.getWorld().getBlockEntity(event.getPos());
-        if(tileEntity != null){
+        TileEntity tileEntity = event.getWorld().getBlockEntity(event.getPos());
+        if (tileEntity instanceof TreeStumpTileEntity)        {
+            TreeStumpTileEntity treeStumpTileEntity = (TreeStumpTileEntity) event.getWorld().getBlockEntity(event.getPos());
 //            BlockTreeStump block = (BlockTreeStump) event.getWorld().getBlockState(event.getPos()).getBlock();
             //Intentar mejorar el dar un solo click para craftear de forma mas intuitiva
-            event.setCanceled(tileEntity.getItem(0).getItem() != Items.AIR);
-            tileEntity.chop(event.getPlayer(), event.getWorld(), event.getPos());
+            event.setCanceled(treeStumpTileEntity.getItem(0).getItem() != Items.AIR);
+            treeStumpTileEntity.chop(event.getPlayer(), event.getWorld(), event.getPos());
         }
     }
 }

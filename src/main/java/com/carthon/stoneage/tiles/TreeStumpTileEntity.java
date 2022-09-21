@@ -27,6 +27,8 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import static com.carthon.stoneage.StoneAge.LOGGER;
+
 public class TreeStumpTileEntity extends InventoryHelperTileEntity implements ISidedInventory {
     private int damage = 20;
     private final IItemHandlerModifiable itemHandler = new ItemStackHandler(1);

@@ -99,8 +99,9 @@ public class BlockWorkStump extends BlockBase {
                 InventoryHelper.dropContents(world, pos, tile);
                 for (int i = 0; i < tile.getContainerSize(); ++i) {
                     ItemStack itemstack = tile.getItem(i);
-                    if (!itemstack.isEmpty())
+                    if (!itemstack.isEmpty()) {
                         tile.setItem(i, ItemStack.EMPTY);
+                    }
                 }
                 CompoundNBT nbt = new CompoundNBT();
                 tile.save(nbt);
@@ -180,7 +181,6 @@ public class BlockWorkStump extends BlockBase {
                     if (!world.isClientSide) {
                         tile.setItem(9, stack.split(1));
                         tile.markForUpdate();
-                        return ActionResultType.sidedSuccess(world.isClientSide());
                     }
                 } else {
                     ItemStack stack2 = tile.getItem(9);
@@ -189,7 +189,6 @@ public class BlockWorkStump extends BlockBase {
                             ForgeHooks.onPlayerTossEvent(player, stack2, false);
                         tile.setItem(9, ItemStack.EMPTY);
                         tile.markForUpdate();
-                        return ActionResultType.sidedSuccess(!world.isClientSide());
                     }
                 }
             }
